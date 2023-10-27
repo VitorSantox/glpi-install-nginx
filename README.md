@@ -267,9 +267,30 @@ Crie um arquivo de configuração do Virtual Host para o GLPI:
 ```bash
 sudo nano /etc/nginx/sites-available/glpi
 ```
+```
+server {
+    listen 80;
+    listen [::]:80;
 
-Dentro do arquivo, insira a configuração do Virtual Host do Nginx. Um exemplo é fornecido no passo 2.9 do passo a passo anterior (n2).
+    server_name glpi.localhost;
 
+    root /var/www/glpi/public;
+
+    location / {
+        try_files $uri /index.php$is_args$args;
+    }
+
+    location ~ ^/index\.php$ {
+        # the following line needs to be adapted, as it changes depending on OS distributions and PHP versions
+        fastcgi_pass unix:/run/php/php-fpm.sock;
+
+        fastcgi_split_path_info ^(.+\.php)(/.*)$;
+        include fastcgi_params;
+
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    }
+}
+```
 2.9 Habilitar o Virtual Host do Nginx:
 
 ```bash
