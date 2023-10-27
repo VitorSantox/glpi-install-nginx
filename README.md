@@ -1,10 +1,6 @@
-Aqui está o seu texto formatado em Markdown:
 
-```markdown
 # GLPI-Install
 ## Script de Instalação do GLPI
-
-[Vídeo de Referência](https://www.youtube.com/watch?v=seu-video)
 
 ### 1. Pré-Requisitos
 
@@ -186,10 +182,6 @@ EOF
 
 ### Informações Adicionais
 
-- **Responsável:** luciano@citrait.com.br
-- **Data:** 13/06/2023
-- **Versão:** 1.0
-- **Homologado:** Ubuntu 22.04
-```
+https://github.com/MasterMindTI/glpi-install
+https://glpi-install.readthedocs.io/pt/latest/install/index.html
 
-Você pode copiar e colar este código formatado no Markdown para criar um documento bem estruturado. Certifique-se de verificar se o conteúdo corresponde ao seu script de instalação.
