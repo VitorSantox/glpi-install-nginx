@@ -70,7 +70,11 @@ Vamos prosseguir com a instalação do GLPI:
   ```bash
   sudo a2dissite 000-default.conf
   ```
-
+- 2.8. Habilita session.cookie_httponly
+  ```
+  sudo sed -i 's/^session.cookie_httponly =/session.cookie_httponly = on/' /etc/php/8.1/apache2/php.ini && \
+  sudo sed -i 's/^;date.timezone =/date.timezone = America\/Sao_Paulo/' /etc/php/8.1/apache2/php.ini
+  ```
 ## 3.0 Configuração do Nginx (Alterações para usar o Nginx)
 
 Aqui estão as etapas específicas para configurar o Nginx como servidor web:
