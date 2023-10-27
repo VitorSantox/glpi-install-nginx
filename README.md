@@ -158,4 +158,13 @@ define('GLPI_LOG_DIR', '/var/log/glpi');
 EOF
 ####################################################################
 
-Espero que esta formatação em markdown torne o passo a passo mais claro e fácil de seguir. Certifique-se de adaptar as configurações de acordo com o seu ambiente específico. Se tiver mais alguma pergunta ou precisar de esclarecimentos adicionais, sinta-se à vontade para perguntar.
+5. Primeiros Passos
+####################################################################
+
+5.1. Acessar o GLPI via web browser
+5.2. Criar um novo usuário com perfil super-admin
+5.3. Remover os usuários glpi, normal, post-only, tech.
+5.3.1. Enviar os usuários para a lixeira
+5.3.2. Remover permanentemente
+5.3.4. Configurar a url de acesso ao sistema em: Configurar -> Geral -> Configuração Geral -> URL da aplicação.
+####################################################################
