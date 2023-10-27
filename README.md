@@ -130,4 +130,32 @@ Essas etapas permanecem as mesmas, independentemente do servidor web que você e
 Agora, você deve ter o GLPI configurado e seguro, com o Nginx como servidor web.
 ```
 
+## Parte 3 do passo a passo original:
+####################################################################
+
+3. Ajustes de Segurança
+####################################################################
+
+3.1. Remover o arquivo de instalação
+sudo rm /var/www/glpi/install/install.php
+3.2. Mover pastas do GLPI de forma segura
+sudo mv /var/www/glpi/files /var/lib/glpi
+sudo mv /var/www/glpi/config /etc/glpi
+sudo mkdir /var/log/glpi && sudo chown -R www-data:www-data /var/log/glpi
+3.3. Mover pastas do GLPI de forma segura | conf-dir
+cat << EOF | sudo tee /var/www/glpi/inc/downstream.php
+<?php
+define('GLPI_CONFIG_DIR', '/etc/glpi/');
+if (file_exists(GLPI_CONFIG_DIR . '/local_define.php')) {
+   require_once GLPI_CONFIG_DIR . '/local_define.php';
+}
+EOF
+3.4. Mover pastas do GLPI de forma segura | data dir
+cat << EOF | sudo tee /etc/glpi/local_define.php
+<?php
+define('GLPI_VAR_DIR', '/var/lib/glpi');
+define('GLPI_LOG_DIR', '/var/log/glpi');
+EOF
+####################################################################
+
 Espero que esta formatação em markdown torne o passo a passo mais claro e fácil de seguir. Certifique-se de adaptar as configurações de acordo com o seu ambiente específico. Se tiver mais alguma pergunta ou precisar de esclarecimentos adicionais, sinta-se à vontade para perguntar.
