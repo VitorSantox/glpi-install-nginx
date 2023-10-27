@@ -1,6 +1,4 @@
-Claro, vou formatar o passo a passo em markdown e adicionar as informações dos passos completos, tanto os originais quanto as novas configurações com o Nginx. Aqui está:
 
-```markdown
 # Instalação do GLPI - Passo a Passo
 
 ## 1.0 Pré-Requisitos
