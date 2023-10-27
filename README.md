@@ -1,5 +1,5 @@
 
-# Instalação do GLPI - Passo a Passo
+# Instalação do GLPI com NGINX - Passo a Passo
 
 ## 1.0 Pré-Requisitos
 
