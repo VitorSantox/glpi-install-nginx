@@ -158,7 +158,7 @@ define('GLPI_LOG_DIR', '/var/log/glpi');
 EOF
 ####################################################################
 
-5. Primeiros Passos
+## 5.0 Primeiros Passos
 ####################################################################
 
 5.1. Acessar o GLPI via web browser
